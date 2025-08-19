@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMO-MCP 交互式界面</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/github.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>SUMO-MCP</h3>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <i class="bi bi-plus-lg"></i> 新对话
+                </button>
+            </div>
+            <div class="chat-history" id="chatHistory">
+                <!-- 历史对话列表将在这里动态生成 -->
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- TodoList区域 -->
+            <div class="todolist-container" id="todolist-container" style="display: none;">
+                <div class="todolist-header">
+                    <h5><i class="bi bi-list-check"></i> 任务列表</h5>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleTodoList()">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <div class="todolist-content" id="todolist-content">
+                    <!-- todolist项目将在这里动态生成 -->
+                </div>
+            </div>
+            
+            <div class="chat-container" id="chat-container">
+                <!-- 对话消息将在这里动态生成 -->
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="输入您的问题..." rows="1"></textarea>
+                    <button id="send-btn" class="send-btn">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="disclaimer">SUMO-MCP 可能会产生错误信息。请检查重要信息。</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Highlight.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+    <!-- marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+    
+    <!-- Socket.IO Client -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    
+    <!-- 应用脚本 -->
+    <script src="js/app.js"></script>
+</body>
+</html> 
